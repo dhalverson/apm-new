@@ -10,7 +10,7 @@ import { ConvertToSpacesPipe } from './utils/pipes/convert-to-spaces.pipe';
   declarations: [
     AppComponent,
     ProductListComponent,
-    ConvertToSpacesPipe,
+    ConvertToSpacesPipe
   ],
   imports: [
     BrowserModule,

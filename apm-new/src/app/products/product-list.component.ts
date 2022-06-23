@@ -80,12 +80,7 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-  }
-
-  constructor() {
-    this.filteredProducts = this.products;
-    this.listFilter = '';
+    this.listFilter = ''
   }
 
   applyFilter(filterBy: string): Product[] {

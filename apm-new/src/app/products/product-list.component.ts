@@ -8,7 +8,7 @@ import { ProductService } from "./product.service";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  constructor (public _ProductService: ProductService) {}
+  constructor (private productService: ProductService) {}
   currentItem = 'Rating';
   currentName = 'Name';
   pageTitle: string = 'Product List';
@@ -16,6 +16,7 @@ export class ProductListComponent implements OnInit {
   imageMargin: number = 2;
   showImage: boolean = false;
   filteredProducts: Product[] = [];
+  products: Product[] = [];
   
   private _listFilter: string = '';
   get listFilter(): string {
@@ -23,7 +24,7 @@ export class ProductListComponent implements OnInit {
   }
   set listFilter(value: string) {
     this._listFilter = value;
-    this.filteredProducts = this._listFilter ? this.applyFilter(this._listFilter) : this._ProductService.getProducts();
+    this.filteredProducts = this._listFilter ? this.applyFilter(this._listFilter) : this.products;
   }
 
   toggleImage(): void {
@@ -31,12 +32,13 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listFilter = ''
+    this.products = this.productService.getProducts();
+    this.filteredProducts = this.products;
   }
 
   applyFilter(filterBy: string): Product[] {
     filterBy = filterBy.trim().toLocaleLowerCase();
-    return this._ProductService.getProducts().filter((product: Product) =>
+    return this.products.filter((product: Product) =>
       product.productName.toLocaleLowerCase().includes(filterBy));
   }
 

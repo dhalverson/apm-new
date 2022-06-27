@@ -8,6 +8,7 @@ import { Product } from "./product";
 })
 export class ProductListComponent implements OnInit {
   currentItem = 'Rating';
+  currentName = 'Name';
   pageTitle: string = 'Product List';
   imageWidth: number = 50;
   imageMargin: number = 2;

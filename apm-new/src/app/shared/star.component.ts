@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core
 
 export class StarComponent implements OnChanges {
   @Input() rating: number = 0;
+  @Input() name: string = '';
   cropWidth: number = 75;
   @Output() ratingClicked: EventEmitter<string> = 
     new EventEmitter<string>();
@@ -17,7 +18,7 @@ export class StarComponent implements OnChanges {
   }
 
   onClick() {
-    this.ratingClicked.emit(`The rating ${this.rating} was clicked!`)
+    this.ratingClicked.emit(`${this.name} has a rating of ${this.rating} stars!`)
   }
 
 } 

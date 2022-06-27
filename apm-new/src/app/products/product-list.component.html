@@ -46,6 +46,7 @@
             <td>{{ product.price | currency }}</td>
             <td>
               <pm-star [rating]="product.starRating"
+                [name]="product.productName"
                 (ratingClicked)="onRatingClicked($event)">
               </pm-star>
             </td>

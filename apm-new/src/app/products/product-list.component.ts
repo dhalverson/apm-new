@@ -8,7 +8,7 @@ import { ProductService } from "./product.service";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  constructor (private _ProductService: ProductService) {}
+  constructor (public _ProductService: ProductService) {}
   currentItem = 'Rating';
   currentName = 'Name';
   pageTitle: string = 'Product List';

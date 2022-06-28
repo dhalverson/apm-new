@@ -8,6 +8,7 @@ import { HttpClient } from "@angular/common/http";
 
 export class ProductService {
 
+  private productUrl = 'api/products/products.json'
   constructor(private http: HttpClient) {}
 
   getProducts(): Product[] {

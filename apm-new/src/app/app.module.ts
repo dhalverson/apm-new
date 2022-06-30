@@ -8,7 +8,7 @@ import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './utils/pipes/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
-import { WelcomeComponent }
+import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -27,7 +27,9 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
       { path: 'products/:id', component: ProductDetailComponent },
-      { path: 'welcome', component: WelcomeComponent }
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
   providers: [],

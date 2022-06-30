@@ -10,11 +10,13 @@ import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { Routes, RouterModule } from '@angular/router';
+import { FavoriteComponent } from './favorite.component';
 
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'welcome', component: WelcomeComponent },
+  { path: 'favorite', component: FavoriteComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
 ];
@@ -26,7 +28,8 @@ const routes: Routes = [
     ConvertToSpacesPipe,
     StarComponent,
     ProductDetailComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

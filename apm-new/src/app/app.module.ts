@@ -10,7 +10,7 @@ import { StarComponent } from './shared/star.component';
 import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { Routes, RouterModule } from '@angular/router';
-import { FavoriteComponent } from './favorite.component';
+import { FavoriteComponent } from './products/favorite.component';
 
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },

@@ -11,10 +11,12 @@ import { ProductDetailComponent } from './products/product-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FavoriteComponent } from './products/favorite.component';
+import { DeclarationListEmitMode } from '@angular/compiler';
+import { ProductDetailGuard } from './products/product-detail.guard';
 
 const routes: Routes = [
   { path: 'products', component: ProductListComponent },
-  { path: 'products/:id', component: ProductDetailComponent },
+  { path: 'products/:id', component: ProductDetailComponent, canActivate: [ProductDetailGuard] },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'favorite', component: FavoriteComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },

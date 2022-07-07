@@ -14,7 +14,7 @@ export class ProductDetailGuard implements CanActivate {
       const id: number = Number(route.params['id']);
       if (id <= 0 || !Number.isFinite(id)) {
         alert("Please provide a valid ID");
-        this._router.navigateByUrl('/products');
+        this._router.navigate(['/products']);
         return false;
       }
       return true;

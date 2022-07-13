@@ -7,4 +7,5 @@ export type Product = {
   price: number;
   starRating: number;
   imageUrl: string;
+  favorite: boolean;
 }
